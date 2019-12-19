@@ -15,12 +15,13 @@ if __name__ == '__main__':
 
     dir = sys.argv[1]
     try:
-        file = open(dir)
+        file = open(dir, 'r', 'utf-8')
     except IOError as e:
         exit(e)
     try:
         content = file.read()
-    except:
+    except Exception as e:
+        print(e);
         exit('文件读取失败')
     finally:
         file.close()
