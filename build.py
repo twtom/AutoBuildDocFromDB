@@ -16,7 +16,7 @@ if __name__ == '__main__':
     dir = sys.argv[1]
     try:
         file = open(dir)
-    except IOError, e:
+    except IOError as e:
         exit(e)
     try:
         content = file.read()
@@ -51,6 +51,6 @@ if __name__ == '__main__':
     finally:
         file_obj.close()
 
-    print '数据库文档已经成功创建,文件在md目录下.'
+    print('数据库文档已经成功创建,文件在md目录下.');
 
 
