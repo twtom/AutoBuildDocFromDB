@@ -1,5 +1,7 @@
 # -*- coding:utf-8 -*-
 # Author : 我才是二亮 (unstring@163.com)
+# edit by Tom on 2019-12-19
+
 import sys, os.path
 from FileParserClass import FileParser
 from MarkdownBuildClass import MarkDownBuild
@@ -15,7 +17,7 @@ if __name__ == '__main__':
 
     dir = sys.argv[1]
     try:
-        file = open(dir, 'r', 'utf-8')
+        file = open(dir, 'r', encoding='utf-8')
     except IOError as e:
         exit(e)
     try:
@@ -41,8 +43,9 @@ if __name__ == '__main__':
     # 写文件
     file_obj = ''
     try:
-        file_obj = open(md_dir + file_name, 'w')
-    except:
+        file_obj = open(md_dir + file_name, encoding='utf-8')
+    except Exception as write_e:
+        print(write_e);
         exit('文件创建失败')
 
     try:
